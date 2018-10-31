@@ -1,0 +1,56 @@
+.footer {
+	width: 100%;
+	bottom: 0;
+	height: 50px;
+	background-color: black;
+	padding: 15px;
+	color : green;
+}
+
+.error {
+	color: red;
+}
+.navbar{
+	background-color: black;
+	
+	
+}
+.home{
+	background-color: #f2f2f2;
+	width:100%;
+	height:800px;
+}
+.select{
+	width:60%;
+	height:100%;
+	float:left;
+	
+}
+.selectl, .selectr{
+	width:20%;
+	height:100%;
+	float:left;
+}
+.selpc, .selnote, .seltab{
+	width:100%;
+	height:30%;
+}
+.selpc:hover, .selnote:hover, .seltab:hover{
+	border:2px solid black;
+	border-radius:5px;
+	box-shadow: 10px 10px;
+}
+.selpc{
+	margin-top:3%;	
+}
+.selnote{
+	margin-bottom:3%;
+	margin-top:3%;
+}
+
+
+img{
+	width:100%;
+	height:100%;
+}
+
