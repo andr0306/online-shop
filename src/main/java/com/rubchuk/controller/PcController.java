@@ -15,7 +15,7 @@ import com.rubchuk.service.PcService;
 import com.rubchuk.service.TabletService;
 
 @Controller
-@RequestMapping("/admin/adminpage")
+@RequestMapping("/admin")
 public class PcController {
 	
 	@Autowired
@@ -29,7 +29,7 @@ public class PcController {
 	@PostMapping("/addp")
 	public String savePc(@ModelAttribute("pc")Pc pc) {
 		pcService.savePc(pc);
-		return "redirect:/admin/adminpage/listp";
+		return "redirect:/admin/listp";
 	}
 	
 	@GetMapping("/listp")
@@ -40,6 +40,6 @@ public class PcController {
 	@GetMapping("/{pcId}/delete")
 	public String deleteTabletById (@PathVariable("pcId") int pcId) {
 	pcService.deletePcById(pcId);
-	return "redirect:/admin/adminpage/listp";
+	return "redirect:/admin/listp";
 }
 }		

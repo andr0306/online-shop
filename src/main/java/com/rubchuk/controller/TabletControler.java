@@ -14,7 +14,7 @@ import com.rubchuk.entity.Tablet;
 import com.rubchuk.service.TabletService;
 
 @Controller
-@RequestMapping("/admin/adminpage")
+@RequestMapping("/admin")
 public class TabletControler {
 		
 		@Autowired
@@ -28,7 +28,7 @@ public class TabletControler {
 		@PostMapping("/addt")
 		public String saveTablet(@ModelAttribute("tablet")Tablet tablet) {
 			tabletService.saveTablet(tablet);
-			return "redirect:/admin/adminpage/listt";
+			return "redirect:/admin/listt";
 		}
 		
 		@GetMapping("/listt")
@@ -40,6 +40,6 @@ public class TabletControler {
 		@GetMapping("/{tabletId}/delete")
 		public String deleteTablet(@PathVariable("tabletId") int tabletId) {
 			tabletService.deleteTabletById(tabletId);
-			return "redirect:/admin/adminpage/listt";
+			return "redirect:/admin/listt";
 }
 }

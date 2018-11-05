@@ -15,7 +15,6 @@ import com.rubchuk.entity.Repair;
 import com.rubchuk.mapper.UserMapper;
 import com.rubchuk.service.NotebookService;
 import com.rubchuk.service.PcService;
-import com.rubchuk.service.ProductService;
 import com.rubchuk.service.RepairService;
 import com.rubchuk.service.TabletService;
 import com.rubchuk.service.UserService;
@@ -24,7 +23,6 @@ import com.rubchuk.service.UserService;
 public class BaseController {
 	
 	@Autowired private UserService userService;
-	@Autowired private ProductService productService;
 	@Autowired private TabletService tabletService;
 	@Autowired private NotebookService notebookService;
 	@Autowired private PcService pcService;
@@ -32,7 +30,6 @@ public class BaseController {
 	
 	@GetMapping({"/", "/home"})
 	public String showHome(Model model) {
-		model.addAttribute("product", productService.findAllProducts());
 		return "home";
 	}
 	
@@ -55,12 +52,9 @@ public class BaseController {
 		
 		return "redirect:/login";
 	}
-	
-	
-	
-	@GetMapping("admin/adminpage")
-	public String showAdminpage() {
-		return "adminpage";
+		@GetMapping("admin")
+		public String showAdminpage() {
+		return "admin/admin";
 	}
 		@GetMapping("/tablet")
 		public String showTablets(Model model) {
@@ -74,7 +68,6 @@ public class BaseController {
 		}
 		@GetMapping("/pc")
 		public String showPcs(Model model) {
-		System.out.println(pcService.findAllPcs().get(0).getImg());
 		model.addAttribute("pc",pcService.findAllPcs());
 		return "pc";
 	}

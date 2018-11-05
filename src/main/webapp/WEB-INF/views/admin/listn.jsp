@@ -14,6 +14,8 @@
                         <th>Name</th>
                         <th>Description</th>
                         <th>Price</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -23,6 +25,8 @@
                         <td>${ notebook.name}</td>
                         <td>${ notebook.description}</td>
                         <td>$${ notebook.price}</td>
+                        <td><a href = "${pageContext.request.contextPath }/admin/${notebook.id}/editnotebook">Edit</a></td>
+                         <td><a href = "${pageContext.request.contextPath }/admin/${notebook.id}/deletenotebook">Delete</a></td>
                       </tr>
                       </c:forEach>
                     </tbody>

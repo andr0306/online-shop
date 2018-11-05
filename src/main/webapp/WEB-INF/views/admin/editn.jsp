@@ -1,13 +1,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<%@ page contentType="text/html; charset=UTF-8" %>
 
 
-
-
-       <form:form method="POST" action="${pageContext.request.contextPath }" modelAttribute="notebook">
+ <form:form method="POST" action="${pageContext.request.contextPath}/admin/${notebookId}/editnotebook" modelAttribute="notebook">
         <div id="frm">
-             <h4 style="text-align:center">Add notebook:</h4>
+             <h4 style="text-align:center">edit notebook:</h4>
             <div class="panel panel-default">
                 <div class="panel-body form-horizontal payment-form">
                     <div class="form-group">

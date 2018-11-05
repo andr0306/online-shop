@@ -53,4 +53,53 @@ img{
 	width:100%;
 	height:100%;
 }
+.thumbnail:hover{
+	background-color:#c3c6c0;
+	border:1px solid;
+}
+.adminpage{
+	width:100%;
+	height:600px;
 
+}
+.blocks{
+	width:100%;
+	height:33.3%;
+	background-color:#f2f2f2;
+	
+}
+.buttons{
+	width:20%;
+	height:75%;
+	float:left;
+	margin-left:10%;
+	margin-bottom:5%;
+	border:2px solid;
+	border-radius:5px;
+}
+.buttons:hover{
+	box-shadow: 5px 5px;
+	border-color:green;
+}
+
+.buttonsrl{
+	width:20%;
+	height:75%;
+	float:left;
+	margin-left:10%;
+	margin-bottom:5%;
+}
+.button-title{
+	width:100%;
+	height:20%;
+	font-family:impact;
+	font-size:24px;
+	
+	}
+.block-photo{
+	width:100%;
+	height:80%;
+}
+.buttons a{
+	color:black;
+}
