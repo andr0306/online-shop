@@ -15,7 +15,7 @@
                         <th>Description</th>
                         <th>Price</th>
                         <th>Price</th>
-                        <th>Price</th>
+                        <th>Delete</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -27,13 +27,14 @@
                         <td>${ repair.problem}</td>
                         <td>${ repair.firstName}</td>
                         <td>$${ repair.phoneNumber}</td>
+                        <td><a href = "${pageContext.request.contextPath }/admin/${repair.id}/deleterepair">Delete</a></td>
                       </tr>
                       </c:forEach>
                     </tbody>
                   </table>    	
               </div>
             </div>
-            <a href="/admin/adminpage/addn" class="btn btn-success btn-product"> Back</a>
+            <a href="/admin" class="btn btn-success btn-product"> Back</a>
     	</div>
 	</div>
 </div>

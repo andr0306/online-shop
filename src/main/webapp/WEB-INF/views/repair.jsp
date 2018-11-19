@@ -46,7 +46,7 @@
                             <button type="submit" class="btn btn-default preview-add-button">
                                 <span class="glyphicon glyphicon-plus"></span> Add
                             </button>
-                             <a href="/admin/adminpage" class="btn btn-success btn-product"> Back</a>
+                             <a href="/admin" class="btn btn-success btn-product"> Back</a>
                         </div>
                     </div>
                 </div>

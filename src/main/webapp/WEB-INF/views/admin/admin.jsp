@@ -51,7 +51,7 @@
 			<div class="buttons">
 				<div class="button-title"><a href="/admin/repair">Ремонт</a></div>
 				<div class="block-photo">
-					<a href="/admin/repair"><img src="/resources/images/qqq.jpg"></a>
+					<a href="/admin/listr"><img src="/resources/images/qqq.jpg"></a>
 				</div>
 			</div>
 			<div class="buttonsrl">

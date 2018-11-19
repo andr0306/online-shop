@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -12,7 +13,7 @@ import com.rubchuk.entity.Repair;
 import com.rubchuk.service.RepairService;
 
 @Controller
-@RequestMapping("/admin/adminpage")
+@RequestMapping("/admin")
 public class RepairController {
 	
 	@Autowired
@@ -23,5 +24,9 @@ public class RepairController {
 		model.addAttribute("repairsList", repairService.findAllRepairs());
 		return "admin/listr";
 	}
-
+	@GetMapping("/{repairId}/deleterepair")
+	public String deleteRepair(@PathVariable("repairId") int repairId) {
+		repairService.deleteRepairById(repairId);
+		return "redirect:/admin/listr";
+}
 }

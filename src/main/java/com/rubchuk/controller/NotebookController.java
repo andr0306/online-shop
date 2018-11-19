@@ -44,12 +44,12 @@ public class NotebookController {
 		return "redirect:/admin/listn";
 	}
 	@GetMapping("/{notebookId}/editnotebook")
-	public String editNews(@PathVariable("notebookId") int notebookId , Model model) {
+	public String editNotebook(@PathVariable("notebookId") int notebookId , Model model) {
 		model.addAttribute("notebookEntity",notebookService.findNotebookById(notebookId));
 		return "admin/editn";
 	}
 	@PostMapping("/{notebookId}/editnotebook")
-	public String saveEditedTeam(@ModelAttribute("notebookEntity") Notebook notebook) {
+	public String saveEditedNotebook(@ModelAttribute("notebookEntity") Notebook notebook) {
 		notebookService.saveNotebook(notebook);
 		return "redirect:/admin/listn";
 	}

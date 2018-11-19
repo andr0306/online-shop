@@ -8,13 +8,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.rubchuk.entity.Notebook;
 import com.rubchuk.entity.Pc;
 import com.rubchuk.entity.Tablet;
 import com.rubchuk.service.PcService;
 import com.rubchuk.service.TabletService;
 
 @Controller
+@SessionAttributes("pcEntity")
 @RequestMapping("/admin")
 public class PcController {
 	
@@ -37,9 +40,19 @@ public class PcController {
 		model.addAttribute("pcsList",pcService.findAllPcs());
 		return "admin/listp";
 	}	
-	@GetMapping("/{pcId}/delete")
+	@GetMapping("/{pcId}/deletepc")
 	public String deleteTabletById (@PathVariable("pcId") int pcId) {
 	pcService.deletePcById(pcId);
 	return "redirect:/admin/listp";
 }
+	@GetMapping("/{pcId}/editpc")
+	public String editPc(@PathVariable("pcId") int pcId , Model model) {
+		model.addAttribute("pcEntity",pcService.findPcById(pcId));
+		return "admin/editp";
+	}
+	@PostMapping("/{pcId}/editpc")
+	public String saveEditedPc(@ModelAttribute("pcEntity") Pc pc) {
+		pcService.savePc(pc);
+		return "redirect:/admin/listp";
+	}
 }		

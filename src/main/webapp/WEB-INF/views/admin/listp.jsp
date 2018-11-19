@@ -15,6 +15,7 @@
                         <th>Name</th>
                         <th>Description</th>
                         <th>Price</th>
+                        <th>Edit</th>
                          <th>Delete</th>
                       </tr>
                     </thead>
@@ -26,7 +27,8 @@
                         <td>${ pc.name}</td>
                         <td>${ pc.description}</td>
                         <td>$${ pc.price}</td>
-                        <td><a href = "${pageContext.request.contextPath }/admin/adminpage/${pc.id}/delete">Delete</a></td>
+                         <td><a href = "${pageContext.request.contextPath }/admin/${pc.id}/editpc">Edit</a></td>
+                        <td><a href = "${pageContext.request.contextPath }/admin/${pc.id}/deletepc">Delete</a></td>
                       </tr>
                       </c:forEach>
                     </tbody>

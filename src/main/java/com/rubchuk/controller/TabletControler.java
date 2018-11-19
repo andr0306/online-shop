@@ -9,11 +9,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.rubchuk.entity.Notebook;
 import com.rubchuk.entity.Tablet;
 import com.rubchuk.service.TabletService;
 
 @Controller
+@SessionAttributes("tabletEntity")
 @RequestMapping("/admin")
 public class TabletControler {
 		
@@ -37,9 +40,19 @@ public class TabletControler {
 			return "admin/listt";
 			
 		}
-		@GetMapping("/{tabletId}/delete")
+		@GetMapping("/{tabletId}/deletetablet")
 		public String deleteTablet(@PathVariable("tabletId") int tabletId) {
 			tabletService.deleteTabletById(tabletId);
+			return "redirect:/admin/listt";
+}
+		@GetMapping("/{tabletId}/edittablet")
+		public String editTablet(@PathVariable("tabletId") int tabletId , Model model) {
+			model.addAttribute("tabletEntity",tabletService.findTabletById(tabletId));
+			return "admin/editt";
+		}
+		@PostMapping("/{tabletId}/edittablet")
+		public String saveEditedTablet(@ModelAttribute("tabletEntity") Tablet tablet) {
+			tabletService.saveTablet(tablet);
 			return "redirect:/admin/listt";
 }
 }

@@ -15,6 +15,7 @@
                         <th>Name</th>
                         <th>Description</th>
                         <th>Price</th>
+                        <th>Edit</th>
                         <th>Delete</th>
                       </tr>
                     </thead>
@@ -26,14 +27,15 @@
                         <td>${ tablet.name}</td>
                         <td>${ tablet.description}</td>
                         <td>$${ tablet.price}</td>
-                         <td><a href = "${pageContext.request.contextPath }/admin/adminpage/${tablet.id}/delete">Delete</a></td>
+                        <td><a href = "${pageContext.request.contextPath }/admin/${tablet.id}/edittablet">Edit</a></td>
+                         <td><a href = "${pageContext.request.contextPath }/admin/${tablet.id}/deletetablet">Delete</a></td>
                       </tr>
                       </c:forEach>
                     </tbody>
                   </table>    	
               </div>
             </div>
-            <a href="/admin/adminpage/addt" class="btn btn-success btn-product"> Back</a>
+            <a href="/admin" class="btn btn-success btn-product"> Back</a>
     	</div>
 	</div>
 </div>

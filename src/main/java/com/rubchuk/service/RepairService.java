@@ -14,5 +14,7 @@ public interface RepairService {
 	void saveRepair (Repair repair);
 	
 	List<Repair> findAllRepairs();
+	
+	void deleteRepairById(int id);
 
 }

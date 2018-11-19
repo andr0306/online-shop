@@ -8,9 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.rubchuk.domain.RegisterRequest;
+import com.rubchuk.entity.Notebook;
 import com.rubchuk.entity.Repair;
 import com.rubchuk.mapper.UserMapper;
 import com.rubchuk.service.NotebookService;
@@ -20,7 +23,9 @@ import com.rubchuk.service.TabletService;
 import com.rubchuk.service.UserService;
 
 @Controller
+@SessionAttributes("noteEntity")
 public class BaseController {
+	
 	
 	@Autowired private UserService userService;
 	@Autowired private TabletService tabletService;
@@ -80,6 +85,13 @@ public class BaseController {
 		public String saveRepair (@ModelAttribute("repair")Repair repair) {
 			repairService.saveRepair(repair);
 			return "redirect:/";
+			
+		}	
+		@GetMapping("/{noteId}/basket")
+		public String showBasket(@PathVariable("noteId")int noteId, Model model) {
+			model.addAttribute("notebook",notebookService.findNotebookById(noteId));
+			return "basket";
 		}
+		
 		
 }

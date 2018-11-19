@@ -27,4 +27,11 @@ public class RepairServiceImpl implements RepairService{
 		return repairRepository.findAll();
 	}
 
+	@Override
+	public void deleteRepairById(int id) {
+		
+		repairRepository.delete(id);
+		
+	}
+
 }

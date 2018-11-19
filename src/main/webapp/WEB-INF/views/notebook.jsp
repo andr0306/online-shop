@@ -18,7 +18,8 @@
 						<p align = "center">${ notebook.description}</p>
 						<div  class="row">
 							<div  class="col-md-6">
-								<a href="/${notebook.id}/basket"  class="btn btn-success btn-product"><span class="glyphicon glyphicon-shopping-cart"></span> Buy</a></div>
+								<button><a href="/${notebook.id}/basket">Buy</a></button>
+								</div>
 						</div>
 
 						<p> </p>

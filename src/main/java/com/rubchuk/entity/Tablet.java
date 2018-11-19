@@ -10,6 +10,9 @@ public class Tablet extends BaseEntity{
 	private String description;
 	private int price;
 	private String brand;
+	
+	private String img;
+	
 	public Tablet() {
 		
 	}
@@ -36,6 +39,12 @@ public class Tablet extends BaseEntity{
 	}
 	public void setBrand(String brand) {
 		this.brand = brand;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
 	}
 	
 	
