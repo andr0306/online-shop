@@ -8,7 +8,9 @@
     </div>
 
     <div class=" navbar-collapse collapse ">
-      
+      <ul class="nav navbar-nav">
+        <li><a href="${pageContext.request.contextPath}/repair">Ремонт</a></li>
+        </ul>
 
       <ul class="nav navbar-nav navbar-right" style="width: 300px;">
 			<sec:authorize access="!isAuthenticated()">
