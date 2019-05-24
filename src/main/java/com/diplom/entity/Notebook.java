@@ -7,8 +7,9 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table (name = "notebook")
 public class Notebook extends BaseEntity{
-	
+	// створюємо таблицю ноубки в базу даних
 	@NotNull(message = "Cant be empty")
+	//поля таблиці
 	private String name;
 	private String description;
 	private int price;

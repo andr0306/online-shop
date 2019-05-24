@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.diplom.entity.Notebook;
 
+//описуемо методи для роботи з таблицею ноутбуки
 @Service
 public interface NotebookService {
 

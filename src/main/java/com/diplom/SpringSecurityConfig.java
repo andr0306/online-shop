@@ -31,7 +31,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 			.userDetailsService(this.userDetailsService)
 			.passwordEncoder(passwordEncoder());
 	}
-
+// добавляемо  сторінки на які можуть перехоити юзер і адмін
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.formLogin()

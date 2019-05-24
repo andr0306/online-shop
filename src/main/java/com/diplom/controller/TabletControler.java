@@ -54,4 +54,5 @@ public class TabletControler {
 			tabletService.saveTablet(tablet);
 			return "redirect:/admin/listt";
 }
+		
 }

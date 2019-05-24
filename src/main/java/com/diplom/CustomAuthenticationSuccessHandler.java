@@ -23,6 +23,7 @@ import lombok.Setter;
 @Getter @Setter
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
+	// створюємо розділення на адміна і юзера
 	private final String ADMIN_PAGE = "/admin";
 	private final String USER_PAGE = "/user";
 	

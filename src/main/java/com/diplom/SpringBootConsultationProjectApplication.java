@@ -13,7 +13,7 @@ import com.diplom.repository.UserRepository;
 
 @SpringBootApplication
 public class SpringBootConsultationProjectApplication extends SpringBootServletInitializer {
-
+// добавляемо повноваження адміна і юзера
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 		return builder.sources(SpringBootConsultationProjectApplication.class);

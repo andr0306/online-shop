@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.diplom.entity.Notebook;
 import com.diplom.repository.NotebookRepository;
 import com.diplom.service.NotebookService;
-
+// реалізовуємо методи з ноутбук сервісу  за допомогою Jpa репозиторію
 @Service
 public class NotebookServiceImpl implements NotebookService{
 	
